@@ -179,6 +179,10 @@
 /* Keep the page top bar visible inside the page and Google Sites embeds. */
 #portal-top .topbar{position:sticky;top:0;z-index:60;isolation:isolate;box-shadow:0 5px 18px #0002}html{scroll-padding-top:var(--sticky-height,100px)}[id]{scroll-margin-top:12px}#portal-top{overflow:clip}
 @media print{#portal-top .topbar{position:static;box-shadow:none}}
+
+/* Sticky Assistant navigation: branding and all page tabs stay together. */
+#portal-top{overflow:visible}#portal-top .topbar{background:#101326}#portal-top .topbar .jump{margin:0;padding:0 22px 14px}#portal-top .topbar .jump-tabs{width:100%;max-width:var(--maxw)}
+@media(max-width:600px){#portal-top .topbar .wrap{height:50px}#portal-top .topbar .jump{padding:0 12px 10px}#portal-top .jump-tabs{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;overscroll-behavior-x:contain;padding-bottom:5px}#portal-top .jump-tab{flex-shrink:0;white-space:nowrap}#portal-top .jump-divider{flex-shrink:0}}
 </style>
 
 <div class="mock" id="portal-top">
@@ -191,7 +195,9 @@
         <span><b>URBAN MUAYTHAI</b><small>ASSISTANT · GETFIT PORTAL</small></span>
       </a>
     </div>
-  </header>
+  <nav class="jump" aria-label="Browse by group">
+        <div class="jump-tabs" id="jumpTabs"></div>
+      </nav></header>
 
   <a id="top"></a>
   <section class="hero">
@@ -215,9 +221,7 @@
       </div>
       <div class="searchmeta" id="searchmeta"></div>
 
-      <nav class="jump" aria-label="Browse by group">
-        <div class="jump-tabs" id="jumpTabs"></div>
-      </nav>
+      
     </div>
   </section>
 
