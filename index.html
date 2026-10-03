@@ -98,7 +98,7 @@
 
 /* ---- jump tabs ---- */
 #portal-top .jump{margin-top:20px;width:100%}
-#portal-top .jump-tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+#portal-top .jump-tabs{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;width:fit-content;max-width:100%;margin-inline:auto}
 #portal-top .jump-tab{font:inherit;font-size:12px;font-weight:700;letter-spacing:.2px;
   color:var(--muted);background:rgba(255,255,255,.02);white-space:nowrap;
   border:1px solid var(--line);border-radius:999px;padding:8px 15px;cursor:pointer;transition:.15s}
@@ -125,7 +125,8 @@
 #portal-top .section-head .note{color:var(--muted-2);font-size:12px;font-weight:500;margin-left:auto;text-align:right}
 
 /* card grid */
-#portal-top .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+#portal-top .cards{display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
+#portal-top .cards > .card{flex:0 1 calc((100% - 28px)/3);min-width:min(280px,100%);max-width:100%}
 #portal-top .card{background:linear-gradient(180deg,var(--panel),#14172e);
   border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 14px;
   box-shadow:var(--shadow);transition:border-color .15s}
@@ -219,7 +220,7 @@
   <main class="wrap" id="content"><div id="empty"><h3>No matches</h3><p>Nothing found for that search. Try a shorter word — like "red flag" or "clubworx".</p></div></main>
 
   <footer class="wrap">
-    <p><b>Urban Muaythai — Assistant Hub.</b> One Team, One Fight. · Playbook, Guides, Message Templates and everything under Reports &amp; Dashboards open in a new tab.</p>
+    <p><b>Urban Muaythai — Assistant Hub.</b> One Team, One Fight. · Clubworx Analysis, Playbook, Guides, Message Templates and everything under Reports &amp; Dashboards open in a new tab.</p>
   </footer>
 
 <script>
@@ -239,6 +240,7 @@
 const GROUP_ORDER = ["Spreadsheets","Reports & Dashboards","Site Pages"];
 
 const EXTERNAL_TABS = [
+ {t:"Clubworx Analysis", u:"https://sites.google.com/urbanmuaythai.com/urban-muaythai/assistant-2-0/clubworx-analysis"},
  {t:"Playbook", u:"https://sites.google.com/urbanmuaythai.com/urban-muaythai/assistant-2-0/playbook"},
  {t:"Guides", u:"https://sites.google.com/urbanmuaythai.com/urban-muaythai/assistant-2-0/guides"},
  {t:"Message Templates", u:"https://sites.google.com/urbanmuaythai.com/urban-muaythai/assistant-2-0/message-templates"},
@@ -275,7 +277,7 @@ const SECTIONS = [
   cards:[
    {h:"Weekly Reporting Suite", links:[
      {t:"Task Command",k:"app",u:"https://sites.google.com/urbanmuaythai.com/urban-muaythai/assistant-2-0/tasks"},
-     {t:"Clubworx Analysis",k:"app",u:"https://sites.google.com/urbanmuaythai.com/urban-muaythai/assistant-2-0/clubworx-analysis"},
+
      {t:"Weekly Numbers Report",k:"app",u:"https://sites.google.com/urbanmuaythai.com/urban-muaythai/assistant-2-0/weekly-numbers-report"},
      {t:"Meta Ads Review",k:"app",u:"https://sites.google.com/urbanmuaythai.com/urban-muaythai/assistant-2-0/meta-ads-review"},
      {t:"Retention Report",k:"app",u:"https://sites.google.com/urbanmuaythai.com/urban-muaythai/assistant-2-0/retention-report"},
